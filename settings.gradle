@@ -1,0 +1,2 @@
+rootProject.name = "Orama Test"
+include ':app'
