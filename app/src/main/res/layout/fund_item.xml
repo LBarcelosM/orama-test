@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:gravity="center">
+<androidx.cardview.widget.CardView
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fund_card"
     android:layout_width="300dp"
     android:layout_height="110dp"
-    card_view:cardCornerRadius="4dp">
+    card_view:cardCornerRadius="15dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,54 +19,37 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_centerInParent="true"
             android:gravity="center"
             android:padding="16dp">
             <TextView
                 android:id="@+id/fund_titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#30A7E2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textColor="#30A7E2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_centerInParent="true"
             android:gravity="center">
             <TextView
                 android:id="@+id/fund_percent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="12dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
                 android:text="Aplicação mínima"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="8dp" />
             <TextView
                 android:id="@+id/fund_valor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="12dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.lbarcelosm.oramatest.models
 
-import java.util.*
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Fund(
     val initial_date: String,
@@ -9,11 +10,13 @@ data class Fund(
     val is_simple: Boolean,
     val description_seo: String,
     val operability: Operability,
-    val full_name: String,
+    @SerializedName("full_name")
+    val fullName: String,
     val opening_date: Any,
     val id: Int,
     val is_closed: Boolean,
-    val simple_name: String,
+    @SerializedName("simple_name")
+    val simpleName: String,
     val target_fund: Any,
     val documents: List<Documents>,
     val specification: Specification,
@@ -27,7 +30,8 @@ data class Fund(
     val orama_standard: Boolean,
     val slug: Boolean,
     val fund_situation: FundSituation,
-    val volatility_12m: String,
+    @SerializedName("volatility_12m")
+    val volatility12m: String,
     val strategy_video: Any,
     val insurance_company_code: Any,
     val profitabilities: Profitabilities,
@@ -38,5 +42,5 @@ data class Fund(
     val is_closed_to_capture: Boolean,
     val fund_manager: FundManager,
     val esg_seal: Boolean
-) {
+): Serializable {
 }

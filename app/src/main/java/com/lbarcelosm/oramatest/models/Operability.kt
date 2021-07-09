@@ -1,5 +1,8 @@
 package com.lbarcelosm.oramatest.models
 
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
 data class Operability(
     val has_operations_on_thursdays: Boolean,
     val retrieval_liquidation_days_type: String,
@@ -17,7 +20,8 @@ data class Operability(
     val retrieval_time_limit: String,
     val has_operations_on_fridays: Boolean,
     val anticipate_retrieval_liquidation_days: Int,
-    val minimum_initial_application_amount: String,
+    @SerializedName("minimum_initial_application_amount")
+    val minimumInitialApplicationAmount: String,
     val anticipate_retrieval_liquidation_days_type: String,
     val retrieval_special_type: String,
     val anticipate_retrieval_liquidation_days_str: String,
@@ -34,5 +38,5 @@ data class Operability(
     val maximum_initial_application_amount: String,
     val has_operations_on_tuesdays: Boolean,
     val minimum_subsequent_application_amount: String
-) {
+): Serializable {
 }

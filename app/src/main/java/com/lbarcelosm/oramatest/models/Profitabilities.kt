@@ -1,5 +1,7 @@
 package com.lbarcelosm.oramatest.models
 
+import java.io.Serializable
+
 data class Profitabilities(
     val m60: String,
     val m48: String,
@@ -9,5 +11,5 @@ data class Profitabilities(
     val m12: String,
     val year: String,
     val day: String
-) {
+): Serializable {
 }
