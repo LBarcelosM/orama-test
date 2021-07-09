@@ -2,4 +2,6 @@
 <resources>
     <string name="lista"></string>
     <string name="fund_titulo"></string>
+    <string name="fund_percent"></string>
+    <string name="fund_valor"></string>
 </resources>
