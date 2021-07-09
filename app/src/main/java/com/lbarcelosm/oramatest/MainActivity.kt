@@ -3,7 +3,8 @@ package com.lbarcelosm.oramatest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
+import android.widget.ListView
+import com.lbarcelosm.oramatest.addapters.FundListAddapter
 import com.lbarcelosm.oramatest.models.Fund
 import com.lbarcelosm.oramatest.services.FundHTTPService
 import retrofit2.Call
@@ -15,18 +16,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val texto = findViewById<TextView>(R.id.texto)
-        texto.text = "Testando!!!"
+        val lista = findViewById<ListView>(R.id.lista)
         var service = FundHTTPService().getService()
-        service.getFunds().enqueue(object : Callback<List<Fund>?> {
-            override fun onResponse(call: Call<List<Fund>?>, response: Response<List<Fund>?>) {
+        val context = this;
+        service.getFunds().enqueue(object : Callback<List<Fund>> {
+            override fun onResponse(call: Call<List<Fund>>, response: Response<List<Fund>>) {
                 if (response.isSuccessful) {
-                    var funds = response.body()
-                    Log.d("Funds Totais", funds?.size.toString())
+                    lista.adapter = FundListAddapter(context, response.body() as ArrayList<Fund>)
                 } else {
                     try {
                         assert(response.errorBody() != null)
-                        Log.d("Founds", response.errorBody()!!.string())
+                        Log.d("Funds", response.errorBody()!!.string())
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
